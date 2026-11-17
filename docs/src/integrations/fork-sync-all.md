@@ -72,19 +72,36 @@ require changes to NativeLink's core service merely to accommodate FSA.
 - Agree on security boundaries and which workloads must remain on trusted
   runners.
 
-### Phase 2 — Optional FSA adapter
+### Phase 2 — Optional FSA adapter (initial foundation merged)
 
-- Add an opt-in, provider-neutral remote-execution adapter in FSA.
+The initial FSA-side adapter foundation is complete and merged in
+[FSA PR #1022](https://github.com/Interested-Deving-1896/fork-sync-all/pull/1022)
+(merge commit `efcbffea73ce945667a56e123be118622ca31bff`). It validates
+NativeLink-compatible REAPI `grpc://`/`grpcs://` endpoint configuration and
+renders Bazel remote-execution and/or remote-cache flags, with unit tests and
+integration documentation.
+
+This is configuration and validation only: it does not contact a NativeLink
+service, provision workers, dispatch builds, or change existing FSA workflows.
+The following remain future work, subject to a real deployment and maintainer
+review:
+
+- Integrate the adapter into a project-scoped, explicitly allowlisted workflow.
+- Confirm the supported client/API configuration against an authorized deployment.
 - Keep endpoint credentials in the existing secret-management mechanism;
   never write credentials into repository files, logs, artifacts, or PR text.
-- Support explicit fallback to local or existing runner execution when the
-  remote service is unavailable, subject to workflow policy.
+- Define and test explicit fallback to local or existing runner execution when
+  the remote service is unavailable, subject to workflow policy.
 - Record backend identity, execution result, cache outcome, and relevant
   provenance without exposing secrets.
 
-### Phase 3 — Pilot and validation
+### Phase 3 — Pilot and validation (not yet performed)
 
-- Start with non-privileged, reproducible build or test jobs.
+No live NativeLink connection or workload pilot has been performed. The
+remaining prerequisites are an identified hermetic FSA workload, an authorized
+disposable NativeLink deployment, and protected TLS/authentication settings.
+
+- Start with a cache-only pilot on non-privileged, reproducible build or test jobs.
 - Compare correctness against local execution before evaluating performance.
 - Test cache isolation, untrusted pull-request behavior, cancellation,
   retries, timeouts, and service-unavailable scenarios.
@@ -93,7 +110,8 @@ require changes to NativeLink's core service merely to accommodate FSA.
 
 ### Phase 4 — Documentation and wider adoption
 
-- Publish an opt-in setup guide and reference configuration.
+- Extend the existing FSA integration guide with deployment-specific,
+  maintainer-reviewed setup instructions once a pilot target is selected.
 - Add CI coverage and compatibility checks for the adapter.
 - Expand to additional workflows only after maintainers and repository owners
   approve the security and operational model.
