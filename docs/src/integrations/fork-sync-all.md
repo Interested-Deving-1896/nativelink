@@ -13,10 +13,21 @@ The Fork-Sync-All (FSA) project proposes an optional integration with
 NativeLink to provide distributed remote execution and shared build caching
 for eligible repository-maintenance, validation, and build workloads.
 
-- NativeLink upstream: https://github.com/harper-carroll/nativelink
+- NativeLink upstream repository: https://github.com/TraceMachina/nativelink
+- NativeLink fork hosting the companion proposal PR: https://github.com/harper-carroll/nativelink
 - NativeLink fork maintained by the proposing party:
   https://github.com/Interested-Deving-1896/nativelink
 - Fork-Sync-All: https://github.com/Interested-Deving-1896/fork-sync-all
+
+Related pull requests:
+
+- NativeLink upstream discussion: https://github.com/TraceMachina/nativelink/pull/3198
+- Companion proposal on the harper-carroll NativeLink fork: https://github.com/harper-carroll/nativelink/pull/1
+- Merged FSA adapter implementation: https://github.com/Interested-Deving-1896/fork-sync-all/pull/1022
+
+These are linked discussion and implementation references. The two NativeLink
+PRs are separate review threads; neither implies an accepted partnership,
+endorsement, or maintainer commitment.
 
 NativeLink provides remote execution and build-cache services compatible with
 the Remote Execution API ecosystem. Fork-Sync-All orchestrates Git-platform
@@ -148,6 +159,7 @@ NativeLink maintainers to implementation work.
 
 ## Related repositories
 
-- [NativeLink upstream](https://github.com/harper-carroll/nativelink)
+- [NativeLink upstream](https://github.com/TraceMachina/nativelink)
+- [harper-carroll NativeLink fork](https://github.com/harper-carroll/nativelink)
 - [Interested-Deving-1896 NativeLink fork](https://github.com/Interested-Deving-1896/nativelink)
 - [Fork-Sync-All](https://github.com/Interested-Deving-1896/fork-sync-all)
