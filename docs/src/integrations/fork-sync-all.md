@@ -2,10 +2,7 @@
 
 ## Status
 
-This document is a proposal for discussion. It does not imply an existing
-partnership, endorsement, maintainer commitment, or change to NativeLink's
-project governance. Any implementation in NativeLink should be reviewed and
-approved by NativeLink maintainers through the normal contribution process.
+This document records the original integration proposal and is retained only as historical context. NativeLink maintainers have clarified that third-party integration documentation should remain outside the NativeLink repository; FSA will therefore maintain the canonical integration guide in its own repository. No NativeLink-side code or documentation contribution is being pursued, and no partnership, endorsement, or maintainer commitment is implied.
 
 ## Summary
 
@@ -142,20 +139,24 @@ disposable NativeLink deployment, and protected TLS/authentication settings.
 - NativeLink maintainers retain full discretion over whether to accept,
   modify, defer, or decline any proposed NativeLink-side contribution.
 
-## Collaboration requested
+## Maintainer response and disposition
 
-We would welcome maintainer feedback on:
+On 2026-11-18, NativeLink maintainer `palfrey` confirmed that third-party
+integration documentation is outside the project's preferred contribution
+scope. NativeLink expects integrations to communicate through its existing
+REAPI endpoints and does not want to host documentation for every REAPI
+client. The response thanked us for the idea and asked that third-party
+integration documentation remain outside the NativeLink repository:
 
-1. Whether this integration direction is useful and technically appropriate.
-2. Which NativeLink-supported client/API path should be the initial target.
-3. Whether maintainers would prefer an FSA-side adapter first, a small
-   NativeLink-side documentation contribution, or a jointly reviewed
-   compatibility prototype.
-4. The appropriate contribution, review, and communication process.
+https://github.com/TraceMachina/nativelink/pull/3198#issuecomment-6984860350
 
-The immediate request is for design feedback and a collaboration discussion.
-It is not a request to merge this proposal as an endorsement or to commit
-NativeLink maintainers to implementation work.
+The FSA-side adapter and documentation remain the appropriate integration
+surface. No NativeLink runtime/API change, upstream documentation PR, formal
+partnership, endorsement, or maintainer commitment is requested or implied.
+
+This proposal is now closed as a discussion record; future implementation
+work belongs in Fork-Sync-All and must continue to use NativeLink's documented
+REAPI client interfaces.
 
 ## Related repositories
 
